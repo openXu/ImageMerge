@@ -14,7 +14,7 @@ public class ImageMerge {
         File bgDir = new File("D:\\1tianhe\\文件\\莱布\\莱布合成\\背景");
         File bodyDir = new File("D:\\1tianhe\\文件\\莱布\\莱布合成\\身体");
 
-    /*    new Thread(){
+        new Thread(){
             @Override
             public void run() {
                 super.run();
@@ -28,8 +28,10 @@ public class ImageMerge {
                 super.run();
                 mergeStart(2, bgDir, bodyDir);
             }
-        }.start();*/
-        mergeStart(1, bgDir, bodyDir);
+        }.start();
+
+
+//        mergeStart(1, bgDir, bodyDir);
 
     }
 
@@ -53,6 +55,7 @@ public class ImageMerge {
 
         deleteDirectory(outDir.getAbsolutePath());
         outDir.mkdir();
+        //遍历角色目录
         for(File subdir : srcDir.listFiles()){
             if(subdir.isDirectory()){
                 String subDirName = subdir.getName();
@@ -93,8 +96,6 @@ public class ImageMerge {
                 for (File file : bodyDir.listFiles()) {
                     bodys.add(file);
                 }
-            }else{
-
             }
             for(File file : srcDir.listFiles()){
                 if(file.isDirectory())
